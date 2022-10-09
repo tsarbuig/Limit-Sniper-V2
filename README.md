@@ -44,23 +44,22 @@ Join our Telegram channel for more infos:  https://t.me/LimitSwap
 #### BUY / SELL  PARAMETERS
 ```yaml
 KIND_OF_SWAP: "base", 
-// Available values : 
-- base --> buy a fixed amount of ETH/BNB
-- tokens --> buy a fixed amount of tokens
+    // Available values : 
+    - base --> buy a fixed amount of ETH/BNB
+    - tokens --> buy a fixed amount of tokens
 
 BUY_AMOUNT_IN_BASE: "0.1", // used if KIND_OF_SWAP = base --> enter the ETH/BNB buy amount you want to use
 BUY_AMOUNT_IN_TOKENS: "1000", // used if KIND_OF_SWAP = tokens --> enter the amount of tokens you want to buy
 SLIPPAGE: "40%", // put only integer numbers here (no decimals)
 
 SELL_MODE: "autosell", 
-// available values : 
+    // available values : 
     - autosell --> will copy buy Tx but will sell automatically after xx% of profit. Target is defined by AUTOSELL_PROFIT parameter
     - donotsell --> will not try to sell
 
 SELL_AMOUNT: "100%", // it will sell  xx%  of the amount of those tokens that you hold in your wallet
 AUTOSELL_PROFIT: "200%", // if you use 'autosell' mode, bot will automatically sell token when price has reached buyprice * AUTOSELL_PROFIT
 
-// BUY protection
 MINIMUM_LIQUIDITY_IN_DOLLARS : 0,  // minimum value of liquidity added to make the bot buy. Team recommend to put 1000 minimum
 HONEYPOT_CHECK : false, 
 STOP_IF_BALANCE_IS_LOWER_THAN : 0.2, // bot will stop automatically if balance goes under this amount (to avoid being scammed by honeypot)
@@ -71,7 +70,7 @@ STOP_IF_BALANCE_IS_LOWER_THAN : 0.2, // bot will stop automatically if balance g
 ```yaml
 AMOUNT_OF_BUYS: 2, // increment number if you want the bot to make multiple buys in the same Tx. Only compatible with USE_CUSTOM_CONTRACT = true
 TOKENS_DESTINATION: "main_wallet", 
-// available values : 
+    // available values : 
     - main_wallet --> all the tokens of your multiplebuy will be sent to your main trading wallet
     - multiple_wallets --> the tokens of your multiplebuy will be sent to wallets defined in WALLETS_RECIPIENT
 
