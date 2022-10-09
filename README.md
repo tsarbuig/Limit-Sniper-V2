@@ -34,7 +34,7 @@ Our new bot will provide you all the tools you need to become a successful snipe
 
 &nbsp;
 
-# Contact
+# How can I buy it?
 Join our Telegram channel for more infos:  https://t.me/LimitSwap 
 
 &nbsp;
