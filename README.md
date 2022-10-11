@@ -125,8 +125,7 @@ CONTRACT_BOT : "0xtsarbuigtsarbuigtsarbuigtsarbuigtsarbuig", // Enter here the c
 ```
 &nbsp;
 
-# Examples of Tx with MULTIBUY modes 
-## (with custom contract only)
+# Examples of Tx with MULTIBUY modes (with custom contract only)
 
 ```yaml
 // Send 5 buys made in tokens to your trading wallet
