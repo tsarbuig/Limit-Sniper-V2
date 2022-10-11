@@ -60,10 +60,16 @@ SELL_MODE: "autosell",
 SELL_AMOUNT: "100%", // it will sell  xx%  of the amount of those tokens that you hold in your wallet
 AUTOSELL_PROFIT: "200%", // if you use 'autosell' mode, bot will automatically sell token when price has reached buyprice * AUTOSELL_PROFIT
 
-MINIMUM_LIQUIDITY_IN_DOLLARS : 0,  // minimum value of liquidity added to make the bot buy. Team recommend to put 1000 minimum
-HONEYPOT_CHECK : false, 
-STOP_IF_BALANCE_IS_LOWER_THAN : 0.2, // bot will stop automatically if balance goes under this amount (to avoid being scammed by honeypot)
+BUYAFTER_XXX_SECONDS : 0,  // if you want the bot to wait XXX seconds before buying
+```
 
+#### COUNTER ANTI BOT PARAMETERS
+```yaml
+SUPER_FAST_SNIPE_WITHOUT_PRECHECKS : false, // if true, all controls below will be disabled
+MINIMUM_LIQUIDITY_IN_DOLLARS : 1000,  // minimum value of liquidity added to make the bot buy. Team recommend to put 1000 minimum
+HONEYPOT_AND_TAX_CHECK : false, // check if token is a honeypot before buying --> this control will take from 0.02s to 0.008s depending on your node
+MAX_BUY_TAX : "40%", // used if HONEYPOT_AND_TAX_CHECK = true --> bot won't buy if buy tax > MAX_BUY_TAX
+MAX_SELL_TAX : "40%", // used if HONEYPOT_AND_TAX_CHECK = true --> bot won't buy if sell tax > MAX_SELL_TAX
 ```
 
 #### COUNTER ANTI BOT PARAMETERS
@@ -74,14 +80,12 @@ TOKENS_DESTINATION: "main_wallet",
     - main_wallet --> all the tokens of your multiplebuy will be sent to your main trading wallet
     - multiple_wallets --> the tokens of your multiplebuy will be sent to wallets defined in WALLETS_RECIPIENT
 
-WALLETS_RECIPIENTS: ["0xtsarbuigtsarbuigtsarbuigtsarbuigtsarbuig", "0xtsarbuigtsarbuigtsarbuigtsarbuigtsarbuig"], // List of wallets where tokens will be transferred if TOKENS_DESTINATION = 'multiple_wallets'
-BUYAFTER_XXX_SECONDS : 0,  // if you want the bot to wait XXX seconds before buying
+WALLETS_RECIPIENTS: ["0xtsarbuigtsarbuigtsarbuigtsarbuigtsarbuig", "0xtsarbuigtsarbuigtsarbuigtsarbuigtsarbuig"], // list of wallets where tokens will be transferred if TOKENS_DESTINATION = 'multiple_wallets'
 ```
 
 #### GAS PARAMETERS
 ```yaml
-GAS_FOR_LIQUIDITY_SNIPE: "100%", // use percentage here. Example : with '120%', if tracked wallet uses GAS = 10, you will use GAS = 12. With '100%' it's same as sniped Tx
-GAS_BOOST: 40, // only if you use txGas = BOOST
+// GAS will be calculated automatically, it needs to be same as addliquidity / opentrading Tx
 ```
 
 #### ANTIRUG PARAMETERS  
