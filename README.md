@@ -105,20 +105,67 @@ PINKSALE_PRESALE_ADDRESS : "0xtsarbuigtsarbuigtsarbuigtsarbuigtsarbuig", // for 
 USE_CUSTOM_CONTRACT : true,
 CONTRACT_BOT : "0xtsarbuigtsarbuigtsarbuigtsarbuigtsarbuig", // Enter here the contract address that you got after deploying contract
 ```
+&nbsp;
 
 # Dedicated modes
 
 #### FORCESELL mode
 ```yaml
-./SniperJs --forcesell  : use this mode if you want to sell all your tokens in 1 click
+./SniperV2 --forcesell  : use this mode if you want to sell all your tokens in 1 click
 ```
 
 #### AUTOSELL mode
 ```yaml
-./SniperJs --autosell  : use this mode if you want he bot to sell all your tokens after a xx% profit 
+./SniperV2 --autosell  : use this mode if you want he bot to sell all your tokens after a xx% profit 
 ```
 
 #### ANTIRUG mode
 ```yaml
-./SniperJs --antirug  : use this mode if you want to start antirug mode on a token you already hold
+./SniperV2 --antirug  : use this mode if you want to start antirug mode on a token you already hold
 ```
+&nbsp;
+
+# Examples of Tx with MULTIBUY modes 
+## (with custom contract only)
+
+```yaml
+// Send 5 buys made in tokens to your trading wallet
+KIND_OF_SWAP: "base",
+BUY_AMOUNT_IN_BASE: "0.0001",
+AMOUNT_OF_BUYS: 5,
+TOKENS_DESTINATION: "main_wallet", 
+```
+<img width="734" alt="image" src="https://user-images.githubusercontent.com/70858574/195204453-e45f313f-29ad-461b-a0fb-13c661367f5a.png">
+
+
+```yaml
+// Send 5 buys made in WBNB to your trading wallet
+KIND_OF_SWAP: "tokens",
+BUY_AMOUNT_IN_TOKENS: "1000",
+AMOUNT_OF_BUYS: 5,
+TOKENS_DESTINATION: "main_wallet", 
+```
+<img width="723" alt="image" src="https://user-images.githubusercontent.com/70858574/195205348-eae4e2ce-1d9e-4722-a12d-acb05cde5ad4.png">
+
+
+```yaml
+// Send 3 buys made in WBNB to 3 different wallets
+KIND_OF_SWAP: "base",
+BUY_AMOUNT_IN_BASE: "0.0001",
+AMOUNT_OF_BUYS: 3,
+TOKENS_DESTINATION: "multiple_wallets", 
+WALLETS_RECIPIENTS: ["0x200E4Fe41faF92C96bd74c711738Ad550175A779", "0x5aa376af6a5d99d051c3f994de26bb5ae234da26", "0xf62803b9f8a146d07b993ad08bda8de91dde8690"],
+```
+![image](https://user-images.githubusercontent.com/70858574/195206368-a3049377-354f-40f4-b667-40732514f89e.png)
+
+
+```yaml
+// Sent 3 buys made in tokens to 3 different wallets
+KIND_OF_SWAP: "tokens",
+BUY_AMOUNT_IN_TOKENS: "1000",
+AMOUNT_OF_BUYS: 3,
+TOKENS_DESTINATION: "multiple_wallets", 
+WALLETS_RECIPIENTS: ["0x200E4Fe41faF92C96bd74c711738Ad550175A779", "0x5aa376af6a5d99d051c3f994de26bb5ae234da26", "0xf62803b9f8a146d07b993ad08bda8de91dde8690"],
+```
+![image](https://user-images.githubusercontent.com/70858574/195205954-a0c44fd1-2717-49a4-b590-a5135622b424.png)
+
